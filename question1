@@ -1,12 +1,21 @@
 ハードウェアの概要：
   機種名：	MacBook Air
-  プロセッサ名：	Intel Core i5
   プロセッサ速度：	1.7 GHz
   プロセッサの個数：	1
   コアの総数：	2
-  二次キャッシュ（コア単位）：	256 KB
-  三次キャッシュ：	3 MB
   メモリ：	4 GB
+
+Intel HD Graphics 4000：
+    チップセットのモデル：	Intel HD Graphics 4000
+    種類：	GPU
+    VRAM（ダイナミック、最大）：	1024 MB
+    装置 ID：	0x0166
+    リビジョン ID：	0x0009
+  カラー LCD：
+    ディスプレイタイプ：	LCD
+    解像度：	1366 x 768
+    ピクセル深度：	32 ビットカラー（ARGB8888）
+
 
 システムソフトウェアの概要：
     システムのバージョン：	OS X 10.10.5 (14F1021)
@@ -17,3 +26,5 @@
   Macintosh HD：　121GB フラッシュストレージ
    Filesystem   1024-blocks   Used  Available Capacity  iused    ifree   %iused
    /dev/disk1   117286912  81426984  35603928    70%   20420744  8900982  70%
+
+電圧数（mV）：	8389
