@@ -1,7 +1,5 @@
 ハードウェアの概要：
-
   機種名：	MacBook Air
-  機種 ID：	MacBookAir5,1
   プロセッサ名：	Intel Core i5
   プロセッサ速度：	1.7 GHz
   プロセッサの個数：	1
@@ -10,17 +8,12 @@
   三次キャッシュ：	3 MB
   メモリ：	4 GB
 
-  システムソフトウェアの概要：
-
+システムソフトウェアの概要：
     システムのバージョン：	OS X 10.10.5 (14F1021)
     カーネルのバージョン：	Darwin 14.5.0
     起動ボリューム：	Macintosh HD
-    起動モード：	通常
-    コンピュータ名：	TakaharuのMacBook Air
 
-  ハードディスク容量：
-
-    Macintosh HD：　121GB フラッシュストレージ
-      takaharunoair:~ sakamototakaharu$ df -k
-      Filesystem                        1024-blocks      Used Available Capacity  iused   ifree %iused  Mounted on
-      /dev/disk1                          117286912  81426984  35603928    70% 20420744 8900982   70%   /
+ハードディスク容量：
+  Macintosh HD：　121GB フラッシュストレージ
+   Filesystem   1024-blocks   Used  Available Capacity  iused    ifree   %iused
+   /dev/disk1   117286912  81426984  35603928    70%   20420744  8900982  70%
