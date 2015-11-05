@@ -20,5 +20,7 @@
 
   ハードディスク容量：
 
-  Macintosh HD：　121GB フラッシュストレージ
-   
+    Macintosh HD：　121GB フラッシュストレージ
+      takaharunoair:~ sakamototakaharu$ df -k
+      Filesystem                        1024-blocks      Used Available Capacity  iused   ifree %iused  Mounted on
+      /dev/disk1                          117286912  81426984  35603928    70% 20420744 8900982   70%   /
