@@ -63,34 +63,34 @@
           ③3000円以上購入で4%、5000円以上購入で5%のポイントが付きます。
           購入額に応じたポイントの表示を行ってください。*/
 
-      $param1 = $_GET['param1'];      //総額
-      $param2 = $_GET['param2'];      //個数
-      $calc = $_GET['calc'];          //商品種別
+      $goukei = $_GET['goukei'];        //総額
+      $piece = $_GET['piece'];          //個数
+      $class = $_GET['class'];          //商品種別
 
-      if ($calc == 1) {
+      if ($class == 1) {
          // 総額
-         echo '１：雑貨、<br>';
+         echo '１：雑貨<br>';
 
-       } elseif ($calc == 2) {
+       } elseif ($class == 2) {
          // 個数
-         echo '２：生鮮食品、<br>';
+         echo '２：生鮮食品<br>';
 
-       } elseif ($calc == 3) {
+       } elseif ($class == 3) {
          // その他
-         echo '３：その他、<br>';
+         echo '３：その他<br>';
 
        }  else {
-         $calcStr = 'calcが'.$calc.'の処理は存在しません。<br>';
+         $classStr = 'classが'.$class.'の処理は存在しません。<br>';
        }
-              echo '総額は'.$param1.'円です<br>';
-       echo '一個あたりの値段は'.$param1/$param2.'円です<br>';
+              echo '総額は'.$goukei.'円です。<br>';
+       echo '一個あたりの値段は'.$goukei/$piece.'円です。<br>';
 
 
-       if($param1<5000 && $param1>=3000){
-         echo $param1*0.04.'PointGet!!1';
+       if($goukei<5000 && $goukei>=3000){
+         echo $goukei*0.04.'PointGet!!1';
 
-      }elseif($param1>=5000){
-        echo $param1*0.05.'PointGet!!!';
+      }elseif($goukei>=5000){
+        echo $goukei*0.05.'PointGet!!!';
        }
 
       ?>
