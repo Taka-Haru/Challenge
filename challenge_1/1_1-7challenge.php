@@ -8,7 +8,7 @@
     <?php
     const LINE_BREAK = '<br>';
 
- //1.「Hello world.」を表示してください
+ //1.「Hello world.」を表示してください。
       echo 'Hello world.<br/>';
       echo '<br>';
 
@@ -65,7 +65,7 @@
       $goukei = $_GET['goukei'];        //総額
       $piece = $_GET['piece'];          //個数
       $class = $_GET['class'];          //商品種別
-
+      
       if ($class == 1) {
          // 総額
          echo '１：雑貨<br>';
