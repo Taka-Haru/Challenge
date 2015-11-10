@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 <meta charset="UTF-8">
       <title>PHP KADAI1</title>
@@ -9,7 +8,7 @@
     <?php
     const LINE_BREAK = '<br>';
 
- //1.「Hello world.」を表示してください。
+ //1.「Hello world.」を表示してください
       echo 'Hello world.<br/>';
       echo '<br>';
 
