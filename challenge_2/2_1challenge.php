@@ -50,12 +50,12 @@
 //４．for文を利用して、’A’を30個連結する処理を実現してください。
 
     $kakeru = 'A';
-      for($i=0; $i<15; $i++){
-        echo $kakeru.$kakeru;
+      for($i=0; $i<30; $i++){
+        $kakeru = $kakeru.'A';
       }
+      echo  $kakeru;
       echo '<br>';
       echo '<br>';
-
 
 //５．for文を利用して、0から100を全部足す処理を実現してください。
   $sum = 0;
