@@ -50,7 +50,7 @@
 //４．for文を利用して、’A’を30個連結する処理を実現してください。
 
     $kakeru = 'A';
-      for($i=0; $i<30; $i++){
+      for($i=0; $i<29; $i++){
         $kakeru = $kakeru.'A';
       }
       echo  $kakeru;
