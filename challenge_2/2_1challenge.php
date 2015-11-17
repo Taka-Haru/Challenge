@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-
+  
 <head>
 <meta charset="UTF-8">
       <title>PHP KADAI1</title>
