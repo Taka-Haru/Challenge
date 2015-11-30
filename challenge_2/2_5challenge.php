@@ -6,6 +6,7 @@
       <title>2_5challenge</title>
 </head>
   <body>
+    
   for文を利用して、<br>
   0から100を全部足す処理を実現してください。
   <br><br>
