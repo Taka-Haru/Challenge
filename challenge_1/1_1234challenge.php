@@ -50,4 +50,5 @@
       echo '割り算結果は：';
       echo $variable / INT.'<br>';
       echo '<br>';
+      
 ?>
