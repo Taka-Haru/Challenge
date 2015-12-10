@@ -3,19 +3,17 @@
 
 <head>
 <meta charset="UTF-8">
-      <title>PHP KADAI1</title>
+      <title>4_2challenge</title>
 </head>
   <body>
-<?php
+    <!-- ２．現在の日時を「年-月-日 時:分:秒」で表示してください。 -->
+    <?php
 
-/*
-１．2016年1月1日 0時0分0秒のタイムスタンプを作成し、表示してください。
-*/
+    $newday = date('Y年m月d日 H時i分s秒');
+    echo '今は、'.'<br>';
+    echo $newday.'です。';
 
-$newday = date('Y年m月d日 H時i分s秒');
-echo $newday;
-
-?>
+    ?>
 </body>
 
 </html>
