@@ -6,13 +6,10 @@
       <title>5_5challenge</title>
 </head>
   <body>
-<!--
-５で作成したプログラムに、ファイルの中身を読み込んで表示する機能を追加してください。
-(ファイルアップロード機能を作成してください。)
--->
+<!--５．ファイルアップロード機能を作成してください。-->
 
 <form enctype="multipart/form-data" action="5_6challenge.php" method="POST">
-  ファイル選択：<input name="usefile" type="file"/><br>
+  ファイル選択：<input type="file" name="usefile"/><br>
   <br>
   <input type="submit" name="upload" value="アップロード">
 </form>
