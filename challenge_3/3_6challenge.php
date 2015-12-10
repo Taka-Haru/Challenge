@@ -3,39 +3,41 @@
 
 <head>
 <meta charset="UTF-8">
-      <title>PHP KADAI1</title>
+      <title>3_6challenge</title>
 </head>
   <body>
-<?php
-/*
-課題6:引き数に1つのid(数値)をとり、
+
+<!-- 課題6:引き数に1つのid(数値)をとり、
 3人分のプロフィール(項目は課題5参照)をあらかじめ関数内で定義しておく。
 引き数のid値により戻り値として返却するプロフィールを誰のものにするか選択する。
-それ以降などは課題5と同じ扱いに
-*/
+それ以降などは課題5と同じ扱いに -->
+
+
+<?php
 
 function get_members($id){
 
-  $sengoku = array(
-        1 => array("織田信長<br>","6月23日<br>","姫路<br>"),
-        2 => array("豊臣秀吉<br>","2月6日<br>","大阪<br>"),
-        3 => array("徳川家康<br>","1月31日<br>","東京<br>"),
-        );
-  return $sengoku[$id];
+  $oda  = array("1<br>","織田信長<br>","6月23日<br>","姫路<br>");
+  $toyo = array("2<br>","豊臣秀吉<br>","2月6日<br>","大阪<br>");
+  $toku = array("3<br>","徳川家康<br>","1月31日<br>","東京<br>");
+
+  $profile = array($oda,$toyo,$toku);
+  return $profile[$id];
 }
-  $yobidashi = get_members(3);
-  foreach($yobidashi as $value){
+
+  $yobidashi = get_members(0);
+  foreach($yobidashi as $key=>$value){
+    if($key==0){
+      continue;
+    }
     echo $value;
   }
 
-/*  foreach文でもfor文でも同じ処理は可能
-for($i=0;$i<3;$i++){
-  $A = $yobidashi[$i];
-  echo $A;
-}
-*/
-
 ?>
+<!-- ※foreach文の所はfor文でも同じ処理は可能
+      for($i=0;$i<3;$i++){
+      $A = $yobidashi[$i];
+      echo $A; -->
 </body>
 
 </html>
