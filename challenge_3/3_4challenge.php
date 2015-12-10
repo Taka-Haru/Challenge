@@ -3,37 +3,33 @@
 
 <head>
 <meta charset="UTF-8">
-      <title>PHP KADAI1</title>
+      <title>3_4challenge</title>
 </head>
   <body>
-<?php
-
-/*課題4:課題1で定義した関数に追記する形として、戻り値　bool値 「true」
+<!-- ß課題4:課題1で定義した関数に追記する形として、戻り値　bool値 「true」
 を返却するように修正し、関数を実行する際にtrueを受け取れたら
 「この処理は正しく実行できました」、そうでないなら「正しく実行できませんでした」
-と表示するような条件分岐を設ける
-*/
+と表示するような条件分岐を設ける -->
 
+<?php
      function my_profile(){
          echo "TakaharuSakamoto<br>";
          echo "1988-11-24<br>";
          echo "前職：飲食業<br>";
+         echo '<br>';
 
-         $profile = true;
-         return $profile;
-       }
+         $bool = true;
+         return $bool;
+      }
 
-        $yobidashi = my_profile();
+    $profile = my_profile();
 
-        if($yobidashi==true){
-		        echo 'この処理は正しく実行できました';
-          }else{
-            echo '正しく実行できませんでした';
-          echo '<br>';
-          }
-            
+      if($profile == true){
+        echo 'この処理は正しく実行できました';
+      }else{
+        echo '正しく実行できませんでした';
+      }
 
-?>
-</body>
-
+    ?>
+  </body>
 </html>

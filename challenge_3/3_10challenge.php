@@ -6,7 +6,7 @@
       <title>3_10challenge</title>
 </head>
   <body>
-    <!-- 課題10:先に$limit=2を定義しておき、
+    <!--課題10:先に$limit=2を定義しておき、
           課題9の処理のうち2人目($limitで定義した値の人数)までで
           foreachのループを抜けるようにする -->
     <?php
