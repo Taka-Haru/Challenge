@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once '../common/defineUtil.php';
 require_once '../common/scriptUtil.php';
 require_once '../common/dbaccesUtil.php';
@@ -21,8 +21,8 @@ require_once '../common/dbaccesUtil.php';
     }else{
         echo 'データの削除に失敗しました。次記のエラーにより処理を中断します:'.$result;
     }
-    echo return_top(); 
+    echo return_top();
     ?>
-   </body> 
+   </body>
 </body>
 </html>

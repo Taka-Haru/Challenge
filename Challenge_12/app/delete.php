@@ -24,11 +24,13 @@ require_once '../common/dbaccesUtil.php';
     自己紹介:<?php echo $result[0]['comment'];?><br>
     登録日時:<?php echo date('Y年n月j日　G時i分s秒', strtotime($result[0]['newDate'])); ?><br>
 
-    <form action="<?php echo DELETE_RESULT; ?>" method="POST">
+    <!--id情報を受け渡せるようにform内容を修正-->
+    <form action="<?php echo DELETE_RESULT; ?>?id=<?php echo $result[0]['userID'];?>" method="POST">
       <input type="submit" name="YES" value="はい"style="width:100px">
     </form>
     <!--スペース削除-->
-    <form action="<?php echo RESULT_DETAIL; ?>" method="POST">
+    <!--id情報を受け渡せるようにform内容を修正-->
+    <form action="<?php echo RESULT_DETAIL; ?>?id=<?php echo $result[0]['userID'];?>" method="POST">
       <input type="submit" name="NO" value="詳細画面に戻る"style="width:100px">
     </form>
 
