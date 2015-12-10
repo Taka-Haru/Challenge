@@ -39,7 +39,7 @@
           echo $_POST['no1'].'×'.$_POST['no2'].'=';
           show_data($_POST['no1'],$_POST['no2'],false);
         }elseif($_POST['keisan']=="累乗"){
-          echo '('.$_POST['no1'].'×'.$_POST['no2'].')'.'('.$_POST['no1'].'×'.$_POST['no2'].')'.'=';
+          echo '('.$_POST['no1'].'×'.$_POST['no2'].')'.'×'.'('.$_POST['no1'].'×'.$_POST['no2'].')'.'=';
           show_data($_POST['no1'],$_POST['no2'],true);
         }
       }
