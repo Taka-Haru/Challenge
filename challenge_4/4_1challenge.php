@@ -3,20 +3,16 @@
 
 <head>
 <meta charset="UTF-8">
-      <title>PHP KADAI1</title>
+      <title>4_1challenge</title>
 </head>
   <body>
-<?php
+    <!-- 課題１．2016年1月1日 0時0分0秒のタイムスタンプを作成し、表示してください。 -->
 
-/*
-１．2016年1月1日 0時0分0秒のタイムスタンプを作成し、表示してください。
-*/
+    <?php
+    echo '2016年1月1日 0時0分0秒の総秒は、'.'<br>';
+    echo mktime(0, 0, 0, 1, 1, 2016).'秒です。';
 
-echo mktime(0, 0, 0, 1, 1, 2016);
-
-//
-
-?>
+    ?>
 </body>
 
 </html>
