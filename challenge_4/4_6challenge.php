@@ -3,19 +3,15 @@
 
 <head>
 <meta charset="UTF-8">
-      <title>PHP KADAI1</title>
+      <title>4_6challenge</title>
 </head>
+
   <body>
-<?php
+    <!-- ６．自分のメールアドレスの「@」以降の文字を取得して、表示してください。 -->
+    <?php
 
-/*
-６．自分のメールアドレスの「@」以降の文字を取得して、表示してください。
-*/
-echo strstr('xt.sakamoto@gmail.com','@');
+    echo strstr('xt.sakamoto@gmail.com','@');
 
-
-
-?>
-</body>
-
+    ?>
+  </body>
 </html>
