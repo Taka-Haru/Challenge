@@ -3,20 +3,18 @@
 
 <head>
 <meta charset="UTF-8">
-      <title>PHP KADAI1</title>
+      <title>4_8challenge</title>
 </head>
   <body>
-<?php
+    <!-- ８．ファイルに自己紹介を書き出し、保存してください。 -->
+  <?php
 
-/*
-８．ファイルに自己紹介を書き出し、保存してください。
-*/
+    $filename = fopen('text2.txt','w');
+    fwrite($filename, 'はじめましてこんにちは。');
+    fwrite($filename, 'わたしのなまえはジョンタイターです。');
+    fclose($filename);
 
-  $filename = fopen('text2.txt','w');
-  fwrite($filename, 'はじめましてこんにちわ');
-  fclose($filename);
+  ?>
 
-?>
-
-</body>
+  </body>
 </html>
