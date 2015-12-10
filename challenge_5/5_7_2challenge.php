@@ -6,7 +6,7 @@
   <body>
 
     <?php
-    //まず、ここでまとめてついかしてしまう！
+    //まず、ここでまとめてついかしてしまう
     $name = $_POST['txtName'];
     $gender = $_POST['rdoGender'];
     $hobby = $_POST['mulText'];
