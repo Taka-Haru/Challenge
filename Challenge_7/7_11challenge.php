@@ -17,7 +17,7 @@
     <br>
     下記項目に、上書きしたい内容を入力してください。<br>
     name:<br>
-    <input type="text" name="name"><br>
+    <input type="text" name="name"><br>
     tel:<br>
     <input type="text" name="tell"><br>
     age:<br>
@@ -69,10 +69,8 @@
       echo $E->getMessage();
       var_dump($E);
     }
-
-      }else{
-        echo '入力されていない箇所があります。';
       }
+
 
     //接続を切断
     $pdo_object = null;
