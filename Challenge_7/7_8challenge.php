@@ -13,13 +13,14 @@
     POSTに値が入っているかの条件分岐を活用すれば、
     一つの.phpで完了できますので、チャレンジしてみてください
   -->
-  <form action="./7_8challenge.php" method="POST">
-    名前を呼び出すヒントを下さい<br>
-  <input type="text" name="txtName">
+    <form action="./7_8challenge.php" method="POST">
+      プロフィールを呼び出すので名前のヒントを下さい！<br>
+      <br>
+      <input type="text" name="txtName">
       <input type="submit" name="btnSubmit" value="Go!!">
-  </form>
+    </form>
 
-  <?php
+    <?php
 
     //try-catchで接続エラーを取得＆表示
     try{
@@ -30,35 +31,35 @@
       die('接続に失敗しました:'.$E->getMessage());
     }
 
-                                                                        //$textbox = $_POST['txtName']をif文の前で宣言するとエラー表示
-                                                                        //空欄で押すと全件表示
-//emptyの返り値がfalseになるよう。issetじゃtrueになる。
+    //値が入っているかを確認し変数に格納
+    if(!empty($_POST['btnSubmit'])){
+      if(!empty ($_POST['txtName'])){
+        $textbox = $_POST['txtName'];
 
-//値が入っているかを条件分岐で確認
-if(isset($_POST['btnSubmit'])){       //もしボタンを押された時
-  if(isset ($_POST['txtName'])){      //isset使って、「もし値が入っていれば」
-    $textbox = $_POST['txtName'];     //変数に格納
-      $sql = "select * from profiles where name like '%$textbox%'";
-      $query = $pdo_object->prepare($sql);        //実行とその結果を受け取れる変数を用意
-      $query -> execute();        //SQL実行
+    //SQL文を格納した文字列を定義(今回は部分一致検索のSQL文)
+    $sql = "select * from profiles where name like '%$textbox%'";
 
+    //実行とその結果を受け取れる変数を用意
+    $query = $pdo_object->prepare($sql);
 
-      while( $row = $query->fetch(PDO::FETCH_OBJ) ){      //データベースから取得したデータを１つ持ってくる
-       echo $row->profilesID . ': ';                     // profilesIDフィールドの内容を表示
-       echo $row->name.'<br>';
-       echo 'TEL： '.$row->tell.'<br>';
-       echo 'AGE： '.$row->age.'<br>';
-       echo 'BIRTH： '.$row->birthday.'<br>';            // birthdayフィールドの内容を表示
-       echo '<br>';
-     }
-  }else{
-    echo "何も入力されてません";
-  }
-}
+    //SQLを実行
+    $query -> execute();
+
+    while($row = $query->fetch(PDO::FETCH_OBJ)){     //データベースから取得したデータを１つ持ってくる
+     echo $row->profilesID . ': ';                      // profilesIDフィールドの内容を表示
+     echo $row->name.'<br>';                            // nameフィールドの内容を表示
+     echo 'TEL： '.$row->tell.'<br>';                   // tellフィールドの内容を表示
+     echo 'AGE： '.$row->age.'<br>';                    // ageフィールドの内容を表示
+     echo 'BIRTH： '.$row->birthday.'<br>';             // birthdayフィールドの内容を表示
+     echo '<br>';
+    }
+      }else{
+      echo "なにかヒント下さい。";
+      }
+    }
     //接続を切断
     $pdo_object = null;
 
-  ?>
-
+    ?>
   </body>
 </html>
