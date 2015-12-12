@@ -1,5 +1,7 @@
 <html>
-<head><title>9_4challenge.php</title></head>
+<head>
+  <title>9_4challenge</title>
+</head>
 <body>
 
 <!--
@@ -8,7 +10,6 @@
 　　　・２つの変数に値を設定するパブリックな関数
 　　　・２つの変数の中身をechoするパブリックな関数
 -->
-
 <?php
 
   class Human{
@@ -17,7 +18,7 @@
     public $name;
     public $age;
 
-      //２つの変数に値を設定するパブリックな関数
+    //２つの変数に値を設定するパブリックな関数
     public function profile($name,$age){
       $this->name = $name;
       $this->age = $age;
@@ -30,12 +31,10 @@
     }
   }
 
-    $x = new Human();
-    $x->profile('日本太郎', 27);
-    $x->show();
-
+  $x = new Human();
+  $x->profile('日本太郎', 27);
+  $x->show();
 ?>
-
 
 </body>
 </html>
