@@ -1,7 +1,8 @@
 <html>
-<head><title>10_4challenge.php</title></head>
+<head>
+  <title>10_4challenge.php</title>
+</head>
   <body>
-
   <!--
   ４．３で作成した抽象クラスを継承して、以下のクラスを作成してください。
 　　・人の情報を扱うHumanクラス
@@ -11,22 +12,25 @@
   -->
 
   <?php
-    abstract class base{
-      abstract protected function load();
-      abstract public function  show();
-    }
+  abstract class Base{
+    abstract protected function load();
+    abstract public function show();
+  }
 
-    class Human extends base{
-      private $table;
-    function__construct();
-      $this->name = 'user';
+  class Human extends Base{
+    private $table;
+    function__construct(){
+    $this->name = 'user';
     }
+  }
 
-    class Station extends Base{
-      private $table;
-      $this->name = 'station';
-      echo $this;
+  class Station extends Base{
+    private $table;
+    function__construct(){
+    $this->name = 'station';
     }
+  }
+
   ?>
   </body>
 </html>

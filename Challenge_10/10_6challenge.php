@@ -1,22 +1,23 @@
 <html>
 <head>
-<title>10_5challenge</title></head>
+<title>10_6challenge</title>
+</head>
 <body>
   <!--
-  ５．load関数でDBから全情報を取得するように各クラスの関数を実装してください。
-  　　その際、table変数を利用して、データを取得するようにしてください。
+  ６．show関数で各テーブルの情報の一覧が表示されるようにしてください。
   -->
-  <?php
+
+<?php
   abstract class Base{
-    abstract protected function load();
+    abstract public function  show();
   }
 
   //Humanクラス
   class Human extends Base{
     private $table;
 
-    //Humanクラスのデータ取得関数
-    function load(){
+    //Humanクラスのデータ表示関数
+    public function show(){
       //try-catchで接続エラーを取得＆表示
       try{
         $pdo_object=
@@ -31,8 +32,17 @@
       $query = $pdo_object -> prepare($sql);
       //SQLを実行
       $query -> execute();
-    }
 
+      while($row = $query->fetch(PDO::FETCH_OBJ)){
+  			echo $row->userID;
+  			echo $row->name . "<br>";
+  			echo $row->tell . "<br>";
+  			echo $row->age . "<br>";
+  			echo $row->birthday . "<br>";
+  			echo $row->departmentID . "<br>";
+  			echo $row->stationID . "<br>" . "<br>";
+  		}
+    }
     //初期化処理
     public function __construct(){
       $this->table = 'user';
@@ -43,8 +53,8 @@
   class Station extends Base{
     private $table;
 
-    //Humanクラスのデータ取得関数
-    function load(){
+    //Stationクラスのデータ表示関数
+    public function show(){
       //try-catchで接続エラーを取得＆表示
       try{
         $pdo_object=
@@ -59,13 +69,25 @@
       $query = $pdo_object -> prepare($sql);
       //SQLを実行
       $query -> execute();
+
+      while($row = $query->fetch(PDO::FETCH_OBJ)){
+        echo $row->stationID ;
+  			echo $row->stationName . "<br>";
+  		}
     }
 
     //初期化処理
     public function __construct(){
-      $this->table = 'user';
+      $this->table = 'station';
     }
   }
-  ?>
+
+  $profile = new Human();
+  $profile->show();
+  $station = new Station();
+  $station->show();
+
+  $pdo_object = null;
+?>
 </body>
 </html>
