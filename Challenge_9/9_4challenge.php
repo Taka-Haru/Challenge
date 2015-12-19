@@ -17,6 +17,8 @@
     //パブリックな２つの変数を設定
     public $name;
     public $age;
+    public $from ='Japan';
+
 
     //２つの変数に値を設定するパブリックな関数
     public function profile($name,$age){
@@ -26,13 +28,14 @@
 
     //２つの変数の中身をechoするパブリックな関数
     public function show(){
-      echo $this->name;
-      echo $this->age;
+      echo $this->name.'<br>';
+      echo $this->age.'<br>';
     }
-  }
+  }   //クラス定義終了
 
   $x = new Human();
-  $x->profile('日本太郎', 27);
+  echo $x->from.'<br>';
+  $x->profile('日本太郎',24);
   $x->show();
 ?>
 
