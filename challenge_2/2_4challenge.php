@@ -6,7 +6,7 @@
       <title>2_4challenge</title>
 </head>
   <body>
-    
+
     <!--
     ４．for文を利用して、’A’を30個連結する処理を実現してください。
         (要復習。よく分かってない)
@@ -26,29 +26,16 @@
   if(!empty($_POST['btn'])){
     if($_POST['character'] ==''){
       echo '何か入力して下さい。';
-    }else{
-      $y = $_POST['character'];
+    }elseif($_POST['character'] ==='A'){
       $x = $_POST['character'];
       for($i=1; $i<30; $i++){
-        $x =$x.'A';
+      $x = $x.'A';
       }
-      echo  $x;
-      echo '<br>';
+      echo $x;
+    }else{
+    echo 'Aを入力して下さい';
     }
   }
-
   ?>
-
-  <!--
-  教えてもらいながら完成させたやつ
-    $kakeru = 'A';
-      for($i=1; $i<30; $i++){
-        $kakeru = $kakeru.'A';
-      }
-      echo  $kakeru;
-      echo '<br>';
-      echo '<br>';
-  -->
-
   </body>
 </html>
