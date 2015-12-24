@@ -14,7 +14,7 @@
     　　　⇒値が ’a’ なら「文字です！」
     　　　⇒それ以外なら「その他です！」
   -->
-  
+
 
     <!--問題を定義-->
     箱の中身はなんでしょう？<br>
@@ -23,10 +23,10 @@
     <!--フォーム作成-->
     <form action="./1_6challenge.php" method="POST">
       <select name="box" style ="width:180px" >
-        <option value"">選択してください </option>
-        <option value"">1の箱</option>
-        <option value"">2の箱</option>
-        <option value"">aの箱</option>
+        <option>選択してください </option>
+        <option>1の箱</option>
+        <option>2の箱</option>
+        <option>aの箱</option>
       </select><br>
       <input type="submit" name="btn" value="OPEN"
             style="position: relative; left: 140px;">
