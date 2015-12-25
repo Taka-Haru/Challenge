@@ -13,7 +13,7 @@
       function get_members(){
 
         $busho = array(
-              "A" => array("1<br>","織田信長<br>","6月23日<br>",null.'<br>'),
+              "A" => array("1<br>","織田信長<br>","6月23日<br>",null),
               "B" => array("2<br>","豊臣秀吉<br>","2月6日<br>","尾張国<br>"),
               "C" => array("3<br>","徳川家康<br>","1月31日<br>","三河国<br>"),
         );
