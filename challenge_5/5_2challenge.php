@@ -11,27 +11,30 @@
   <body>
 
     <?php
-      if(!empty($_POST["txtName"]==null)){
+    
+    if(!empty($_POST["btnSubmit"])){
+      if($_POST["txtName"] == ''){
         echo '名前を入力して下さい。';
         echo '<br>';
       }else{
       echo '名前：'.$_POST['txtName'];
       echo '<br>';
       }
-      if(isset($_POST["rdo"]) && ($_POST["rdo"] == "男") || ($_POST["rdo"] == "女")){
+      if(($_POST["rdo"]) && ($_POST["rdo"] == "男") || ($_POST["rdo"] == "女")){
         echo '性別：'.$_POST['rdo'];
         echo '<br>';
       }else{
       echo  '性別を入力してください。';
       echo '<br>';
       }
-      if(!empty($_POST["mulText"]==null)){
+      if($_POST["mulText"] == ''){
         echo '趣味・特技を入力して下さい。';
         echo '<br>';
       }else{
       echo '趣味：'.$_POST['mulText'];
       echo '<br>';
       }
+    }
     ?>
 
   </body>
