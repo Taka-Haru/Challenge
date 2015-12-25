@@ -17,22 +17,21 @@
 
 function get_members($id){
 
-  $oda  = array("1<br>","織田信長<br>","6月23日<br>","姫路<br>");
-  $toyo = array("2<br>","豊臣秀吉<br>","2月6日<br>","大阪<br>");
-  $toku = array("3<br>","徳川家康<br>","1月31日<br>","東京<br>");
+    $a = array("1<br>","織田信長<br>","6月23日<br>","姫路<br>");
+    $b = array("2<br>","豊臣秀吉<br>","2月6日<br>","大阪<br>");
+    $c = array("3<br>","徳川家康<br>","1月31日<br>","東京<br>");
 
-  $profile = array($oda,$toyo,$toku);
-  return $profile[$id];
+    $profile = array($a, $b, $c);
+    return $profile[$id-1];
 }
 
-  $yobidashi = get_members(0);
-  foreach($yobidashi as $key=>$value){
-    if($key==0){
+  $yobidashi = get_members(1);
+  foreach($yobidashi as $key => $value){
+      if($key==0){
       continue;
-    }
-    echo $value;
+      }
+      echo $value;
   }
-
 ?>
 <!-- ※foreach文の所はfor文でも同じ処理は可能
       for($i=0;$i<3;$i++){
