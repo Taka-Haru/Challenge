@@ -27,6 +27,9 @@
     <br>
       <input type="submit" name="btn" value="DBへ!!">
     </form>
+  </body>
+</html>
+
 
     <?php
 
@@ -61,20 +64,18 @@
     $query -> bindValue(':age',$age);
     $query -> bindValue(':birth',$birth);
 
-    //SQLを実行(値が入っているか、変数に格納しvar_dumpで確認)
-    try{
-      $x= $query -> execute();
-      var_dump($x);
-    }catch(PDOException $E){
-      echo $E->getMessage();
-      var_dump($E);
-    }
-      }
+    // //SQLを実行(値が入っているか、変数に格納しvar_dumpで確認)
+    // try{
+    //   $x= $query -> execute();
+    //   var_dump($x);
+    // }catch(PDOException $E){
+    //   echo $E->getMessage();
+    //   var_dump($E);
+    // }
+    //   }
 
 
     //接続を切断
     $pdo_object = null;
   }
   ?>
-  </body>
-</html>
