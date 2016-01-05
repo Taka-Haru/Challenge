@@ -19,22 +19,85 @@
     <br>
       <input type="submit" name="btn" value="検索">
     </form>
-
-    <?php
-
-    //try-catchで接続エラーを取得＆表示
-    try{
-      $pdo_object=
-      new PDO('mysql:host=localhost;dbname=Challenge_db;charset=utf8',
-      'sakamoto',2591);
-    }catch(PDOException $E){
-      die('接続に失敗しました:'.$E->getMessage());
-    }
-
-
-    //接続を切断
-    $pdo_object = null;
-    ?>
-
   </body>
 </html>
+
+  <?php
+      //try-catchで接続エラーを取得＆表示
+      try{
+        $pdo_object=
+        new PDO('mysql:host=localhost;dbname=Challenge_db;charset=utf8',
+        'sakamoto',2591);
+      }catch(PDOException $E){
+        die('接続に失敗しました:'.$E->getMessage());
+      }
+
+      // if(!empty($_POST["name"])){
+      //   $name = $_POST["name"];
+      // }
+      // if(!empty($_POST["age"])){
+      //   $name = $_POST["age"];
+      // }
+      // if(!empty($_POST["birthday"])){
+      //   $name = $_POST["birthday"];
+      // }
+
+      //入力値がない時の処理
+      if(empty($_POST["name"])){
+      	$name = null;
+      }else{
+      	$name = $_POST["name"];
+      }
+
+      if(empty($_POST["age"])){
+      	$age = null;
+      }else{
+      	$age = $_POST["age"];
+      }
+
+      if(empty($_POST["birthday"])){
+      	$birthday = null;
+      }else{
+      	$birthday = $_POST["birthday"];
+      }
+
+      //名前(部分一致)
+      $sql_name = "select * from profiles where name like '%$name%'";
+      $query_name = $pdo_object->prepare($sql_name);
+      if(!empty($name)){
+      $query_name -> execute();
+      }
+
+      foreach ($query_name->fetchAll(PDO::FETCH_ASSOC) as $key){
+        foreach ($key as $value){
+          //var_dump($value)
+          echo $value.'<br>';
+        }
+      }
+
+      //年齢
+      $sql_age = "select * from profiles where age = $age";
+      $query_age = $pdo_object->prepare($sql_age);
+    	$query_age -> execute();
+
+      foreach ($query_age->fetchAll(PDO::FETCH_ASSOC) as $key){
+        foreach ($key as $value){
+          echo $value.'<br>';
+        }
+      }
+
+      //生年月日
+      $sql_birthday = "select * from profiles where birthday=$birthday";
+      $query_birthday = $pdo_object->prepare($sql_birthday);
+    	$query_birthday -> execute();
+
+      foreach ($query_birthday->fetchAll(PDO::FETCH_ASSOC) as $key){
+        foreach ($key as $value){
+          //var_dump($value);
+          echo $value.'<br>';
+        }
+      }
+
+      $pdo_object = null;
+
+  ?>
