@@ -25,31 +25,24 @@
     //実行とその結果を受け取れる変数を用意
     $query = $pdo_object -> prepare($sql);
 
-    //実数値はbindValueなどを用いて中身を入れ替える(安全の為)
-    $query -> bindValue(':profilesID',1);
-    $query -> bindValue(':name','田中広');
-    $query -> bindValue(':tell','0120-2110-2110');
-    $query -> bindValue(':age',27);
-    $query -> bindValue(':birthday','9838-8-10');
-
     //SQLを実行
     $query -> execute();
-    ?>
 
-    <!-- データベースから取得した結果を使った処理をするには、fetchメソッドを使います。
-    fetchメソッドの引数にPDO::FETCH_OBJを渡すと、オブジェクトとしてデータを取得できます。
-    このオブジェクトは、フィールド名がプロパティになるので、
-    profilesIDプロパティの値からbirthdayプロパティの値をそれぞれechoで表示する。 -->
-    <?PHP
-    
-    while($row = $query->fetch(PDO::FETCH_OBJ) ){      //データベースから取得したデータを１つ持ってくる
-     echo $row->profilesID . ': ';                      // profilesIDフィールドの内容を表示
-     echo $row->name.'<br>';                            // nameフィールドの内容を表示
-     echo 'TEL： '.$row->tell.'<br>';                   // tellフィールドの内容を表示
-     echo 'AGE： '.$row->age.'<br>';                    // ageフィールドの内容を表示
-     echo 'BIRTH： '.$row->birthday.'<br>';             // birthdayフィールドの内容を表示
-     echo '<br>';
+    foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $key){
+      foreach ($key as $value){
+        //var_dump($key);
+        //var_dump($value);
+        echo $value.'<br>';
+      }
     }
+    // while($row = $query->fetch(PDO::FETCH_OBJ) ){      //データベースから取得したデータを１つ持ってくる
+    //  echo $row->profilesID . ': ';                      // profilesIDフィールドの内容を表示
+    //  echo $row->name.'<br>';                            // nameフィールドの内容を表示
+    //  echo 'TEL： '.$row->tell.'<br>';                   // tellフィールドの内容を表示
+    //  echo 'AGE： '.$row->age.'<br>';                    // ageフィールドの内容を表示
+    //  echo 'BIRTH： '.$row->birthday.'<br>';             // birthdayフィールドの内容を表示
+    //  echo '<br>';
+    // }
 
     //接続を切断
     $pdo_object = null;
