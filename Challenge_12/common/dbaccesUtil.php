@@ -50,7 +50,7 @@ function insert_profiles($name, $birthday, $type, $tell, $comment){
     return null;
 }
 
-function serch_all_profiles(){
+function search_all_profiles(){
     //db接続を確立
     $search_db = connect2MySQL();
 
@@ -87,26 +87,35 @@ function search_profiles($name=null,$year=null,$type=null){
     if(isset($name)){
         $search_sql .= " WHERE name like :name";
         $flag = true;
-    }var_dump($flag);
-    if(isset($year) && $flag = false){
+    }
+    //「$flag = false」==に変更
+    if(isset($year) && $flag == false){
         $search_sql .= " WHERE birthday like :year";
         $flag = true;
     }else if(isset($year)){
         $search_sql .= " AND birthday like :year";
-    }var_dump($flag);
-    if(isset($type) && $flag = false){
+    }
+    //「$flag = false」==に変更
+    if(isset($type) && $flag == false){
         $search_sql .= " WHERE type = :type";
     }else if(isset($type)){
         $search_sql .= " AND type = :type";
-    }var_dump($flag);
-var_dump($search_sql);
+    }
 
     //クエリとして用意
     $seatch_query = $search_db->prepare($search_sql);
 
-    $seatch_query->bindValue(':name','%'.$name.'%');
-    $seatch_query->bindValue(':year','%'.$year.'%');
-    $seatch_query->bindValue(':type',$type);
+    //入力しないと処理が行われないように条件を追記
+     if(!empty($name)){
+         $seatch_query->bindValue(':name','%'.$name.'%');
+     }
+     if(!empty($year)){
+         $seatch_query->bindValue(':year','%'.$year.'%');
+     }
+     if(!empty($type)){
+         $seatch_query->bindValue(':type',$type);
+     }
+
     //SQLを実行
     try{
         $seatch_query->execute();
