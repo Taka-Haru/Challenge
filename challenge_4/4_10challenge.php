@@ -18,38 +18,38 @@
     　⑶書き込む内容は、「日時　状況（開始・終了）」の形式で書き込む。
     　⑷最後に、ログファイルを読み込み、その内容を表示してください。
       ⑸sleep(3)とかで3秒処理を止めて差を確認する(終了の前に入れる)-->
-    <?php
+  <?php
 
-    //開始
-    $start = date('Y年m月d日 H時i分s秒');
-    $fp = fopen('log.txt','w');
-    fwrite($fp,"$start".'開始!!');
-    fclose($fp);
+  //開始
+  $start = date('Y年m月d日 H時i分s秒');
+  $fp = fopen('log.txt','w');
+  fwrite($fp,"$start".'開始!!');
+  fclose($fp);
 
-    //関数の処理(改行ごとに<br>がされる関数「nl2br」)
-    $nikki = '焼き芋が
-    おいしい季節に
-    なりましたね〜。';
-    $results = nl2br($nikki);
-    echo $results;
-    echo '<br>';
+  //関数の処理(改行ごとに<br>がされる関数「nl2br」)
+  $nikki = '焼き芋が
+  おいしい季節に
+  なりましたね〜。';
+  $results = nl2br($nikki);
+  echo $results;
+  echo '<br>';
 
-    //３秒遅延させる(タムムラグ検証の為)
-    sleep(3);
+  //３秒遅延させる(タムムラグ検証の為)
+  sleep(3);
 
-    // 終了
-    $finish = date('Y年m月d日 H時i分s秒');
-    $fp = fopen('log.txt', 'a');
-    fwrite($fp, "$finish" . '止めっ！');
-    fclose($fp);
+  // 終了
+  $finish = date('Y年m月d日 H時i分s秒');
+  $fp = fopen('log.txt', 'a');
+  fwrite($fp, "$finish" . '止めっ！');
+  fclose($fp);
 
-    //読み込み
-    $fp = fopen('log.txt', 'r');
-    while ($log.txt == fgets($fp)) {
-    	echo $log.txt.'<br>';
-    }
-    fclose($fp);
+  //読み込み
+  $fp = fopen('log.txt', 'r');
+  while ($log.txt == fgets($fp)) {
+  	echo $log.txt.'<br>';
+  }
+  fclose($fp);
 
-    ?>
-  </body>
+  ?>
+</body>
 </html>
