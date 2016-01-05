@@ -14,6 +14,8 @@
   <input type="text" name="profilesID" size=5><br>
   <br>
   <input type="submit" name="btnSubmit" value="削除!!">
+</body>
+</html>
 
   <?php
 
@@ -44,6 +46,3 @@
   //接続を切断
   $pdo_object = null;
   ?>
-
-  </body>
-</html>
