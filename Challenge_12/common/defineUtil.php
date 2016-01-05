@@ -1,5 +1,5 @@
 <?php
-const ROOT_URL = 'http://localhost/develop/UserManagementSystem-master3/app/index.php';     //indexディレクトリへのURL
+const ROOT_URL = 'http://localhost/develop/challenge_12/app/index.php';     //indexディレクトリへのURL
 const TOP_URI = '/';                                //トップページ
 const INSERT = 'insert.php';                        //登録ページ
 const INSERT_CONFIRM = 'insert_confirm.php';        //登録確認ページ
