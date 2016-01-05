@@ -28,15 +28,21 @@
     //SQLを実行
     $query -> execute();
 
+    foreach ($query->fetchAll(PDO::FETCH_ASSOC) as $key){
+      foreach ($key as $value){
+        //var_dump($value);
+        echo $value.'<br>';
+      }
+    }
 
-     while( $row = $query->fetch(PDO::FETCH_OBJ) ){      //データベースから取得したデータを１つ持ってくる
-      echo $row->profilesID . ': ';                      // profilesIDフィールドの内容を表示
-      echo $row->name.'<br>';                            // nameフィールドの内容を表示
-      echo 'TEL： '.$row->tell.'<br>';                   // tellフィールドの内容を表示
-      echo 'AGE： '.$row->age.'<br>';                    // ageフィールドの内容を表示
-      echo 'BIRTH： '.$row->birthday.'<br>';             // birthdayフィールドの内容を表示
-      echo '<br>';
-     }
+    //  while( $row = $query->fetch(PDO::FETCH_OBJ) ){      //データベースから取得したデータを１つ持ってくる
+    //   echo $row->profilesID . ': ';                      // profilesIDフィールドの内容を表示
+    //   echo $row->name.'<br>';                            // nameフィールドの内容を表示
+    //   echo 'TEL： '.$row->tell.'<br>';                   // tellフィールドの内容を表示
+    //   echo 'AGE： '.$row->age.'<br>';                    // ageフィールドの内容を表示
+    //   echo 'BIRTH： '.$row->birthday.'<br>';             // birthdayフィールドの内容を表示
+    //   echo '<br>';
+    //  }
 
     //接続を切断
     $pdo_object = null;
